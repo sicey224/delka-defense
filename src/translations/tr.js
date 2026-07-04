@@ -1,11 +1,12 @@
 const tr = {
   nav: {
-    home: "ANA SAYFA",
-    about: "HAKKIMIZDA",
-    solutions: "ÇÖZÜMLERİMİZ",
-    selectionGuide: "SEÇİM REHBERİ",
+    home: "Ana Sayfa",
+    about: "Hakkımızda",
+    solutions: "Ürünler",
+    selectionGuide: "Seçim Rehberi",
     projects: "PROJELER",
-    contact: "İLETİŞİM"
+    contact: "İletişim",
+    requestForm: "İzolatör Talep Formu"
   },
   footer: {
     description: "Yeni nesil teknolojik altyapı ile üstün performans, sürdürülebilirlik ve maksimum güvenlik sağlayan otonom savunma sistemleri.",
@@ -19,14 +20,15 @@ const tr = {
     heroBadge: "YENİ NESİL SİSTEMLER",
     heroTitle1: "GELECEĞİN",
     heroTitle2: "SAVUNMA AĞI",
-    heroDesc: "Tam otonom yapay zeka sistemleri, 3D etkileşimli kumanda merkezleri ve yeni nesil gövde tasarımları ile sınırları kaldırın.",
+    heroDesc: "Savunma, denizcilik ve otomotiv sektörleri için yüksek performanslı titreşim ve darbe sönümleme çözümleri.",
     heroBtnPrimary: "REHBERİ BAŞLAT",
     heroBtnSecondary: "SEÇİM REHBERİ",
     aboutBadge: "HAKKIMIZDA",
     aboutTitle: "Geleceğin Savunma Teknolojilerini Üretiyoruz",
     aboutDesc: "DELKA Savunma, yenilikçi yaklaşımı ve uzman mühendislik kadrosu ile Türkiye'nin ve dünyanın güvenliği için en ileri teknolojileri geliştirmek üzere kurulmuştur.",
-    missionTitle: "Misyonumuz",
-    missionDesc: "Ulusal ve uluslararası savunma sanayi ihtiyaçlarını, yüksek mühendislik standartlarında, yenilikçi, güvenilir ve sürdürülebilir ürün ve sistem çözümleriyle karşılamak. Tasarımdan üretime her aşamada en yüksek kaliteyi sunmak.",
+    aboutVision: "Savunma, denizcilik ve otomotiv sektörlerinde tanınan, özgün ve yüksek performanslı çözümler sunan güvenilir bir mühendislik firması olmak; girişimci ruh ve yenilikçi yaklaşımımızla sektörde fark oluşturmak.",
+    aboutMissionTitle: "Misyonumuz",
+    aboutMission: "Savunma, denizcilik ve otomotiv sektörlerine yönelik yüksek performanslı titreşim ve darbe sönümleme çözümleri tasarlıyor ve geliştiriyoruz; müşterilerle buluşturmak için iş ortaklıkları oluşturuyoruz.",
     visionTitle: "Vizyonumuz",
     visionDesc: "Kritik teknolojilerde dışa bağımlılığı azaltan, küresel pazarda rekabet gücü yüksek, teknolojiye yön veren ve sektöründe öncü bir dünya markası olmak. Geleceğin harp ve güvenlik konseptlerini bugünden şekillendirmek.",
     whyTitle: "Neden DELKA Savunma?",

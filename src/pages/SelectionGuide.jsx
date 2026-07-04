@@ -94,7 +94,7 @@ export default function SelectionGuide() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">{t('sg.mainTitle2', 'Seçim Rehberi')}</span>
               </h1>
               <p className="text-blue-100/80 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
-                {t('sg.mainDesc', 'Askeri ve endüstriyel sistemlerin şok ve titreşim yüklerini sönümlemek için kullanılan izolatörlerin hassas mühendislik analiz ve seçim adımları.')}
+                {t('sg.mainDesc', 'İzolatörlerin hassas mühendislik analiz ve seçim adımları.')}
               </p>
             </div>
             

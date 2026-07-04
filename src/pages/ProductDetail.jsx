@@ -46,7 +46,7 @@ export default function ProductDetail() {
         
         {/* Back Link & Header */}
         <div className="mb-10">
-          <Link to="/cozumlerimiz" className="inline-flex items-center gap-2 text-slate-500 font-bold hover:text-delka-blue transition-colors mb-6 text-sm">
+          <Link to="/urunler" className="inline-flex items-center gap-2 text-slate-500 font-bold hover:text-delka-blue transition-colors mb-6 text-sm">
             <ArrowLeft size={16} /> {t('productDetail.backBtn')}
           </Link>
           

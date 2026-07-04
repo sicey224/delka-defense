@@ -35,10 +35,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 tracking-wide">{t('footer.solutionsTitle')}</h4>
             <ul className="space-y-3">
-              <li><Link to="/cozumlerimiz/ths-3139" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-3139</Link></li>
-              <li><Link to="/cozumlerimiz/ths-4139" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-4139</Link></li>
-              <li><Link to="/cozumlerimiz/ths-6154" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-6154</Link></li>
-              <li><Link to="/cozumlerimiz" className="text-sm text-delka-blue hover:text-white transition-colors">{t('home.viewAll')} &rarr;</Link></li>
+              <li><Link to="/urunler/ths-3139" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-3139</Link></li>
+              <li><Link to="/urunler/ths-4139" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-4139</Link></li>
+              <li><Link to="/urunler/ths-6154" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">THS-6154</Link></li>
+              <li><Link to="/urunler" className="text-sm text-delka-blue hover:text-white transition-colors">{t('home.viewAll')} &rarr;</Link></li>
             </ul>
           </div>
 
@@ -47,9 +47,9 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 tracking-wide">{t('footer.corporateTitle')}</h4>
             <ul className="space-y-3">
               <li><a href="/#hakkimizda" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">{t('nav.about')}</a></li>
-              <li><Link to="/projeler" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">{t('nav.projects')}</Link></li>
               <li><Link to="/secim-rehberi" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">{t('nav.selectionGuide')}</Link></li>
               <li><Link to="/iletisim" className="text-sm text-slate-400 hover:text-white hover:pl-2 transition-all">{t('nav.contact')}</Link></li>
+              <li><Link to="/talep-formu" className="text-sm text-delka-blue hover:text-white transition-colors">{t('nav.requestForm')}</Link></li>
             </ul>
           </div>
 

@@ -72,7 +72,7 @@ export default function Products() {
                 </h3>
               </div>
 
-              <Link to={`/cozumlerimiz/${product.id}`} className="mt-8 bg-slate-50 text-delka-navy w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-delka-blue hover:text-white transition-all group/btn border border-slate-100">
+              <Link to={`/urunler/${product.id}`} className="mt-8 bg-slate-50 text-delka-navy w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-delka-blue hover:text-white transition-all group/btn border border-slate-100">
                 {t('products.detailsBtn')} <ChevronRight size={20} className="group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>

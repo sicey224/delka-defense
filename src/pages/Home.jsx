@@ -58,20 +58,13 @@ export default function Home() {
         <div className="w-full md:w-1/2 h-[50vh] md:h-[80vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/60 rounded-full blur-[60px] z-0 pointer-events-none" />
           
-          <Canvas camera={{ position: [0, 1.5, 7], fov: 45 }} className="z-10 relative">
-            <ambientLight intensity={1.5} />
-            <directionalLight position={[10, 20, 15]} intensity={3.5} castShadow color="#ffffff" />
-            <directionalLight position={[-10, -5, -10]} intensity={2} color="#f0f9ff" />
-            <pointLight position={[0, -2, 4]} intensity={1.5} color="#0ea5e9" />
-            
-            <Suspense fallback={null}>
-              <Float speed={2.5} rotationIntensity={1} floatIntensity={2} floatingRange={[-0.2, 0.2]}>
-                <DroneModel />
-              </Float>
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
-              <ContactShadows position={[0, -2, 0]} opacity={0.15} scale={10} blur={2} far={4} color="#0a3055" />
-            </Suspense>
-          </Canvas>
+          <div className="w-full h-full flex items-center justify-center relative z-10 animate-[float_4s_ease-in-out_infinite]">
+            <img 
+              src="/assets/catalog/ths-10224-urun.png" 
+              alt="Delka Isolator" 
+              className="w-3/4 max-w-[500px] object-contain drop-shadow-[0_20px_30px_rgba(10,48,85,0.4)]"
+            />
+          </div>
         </div>
       </main>
 
@@ -220,7 +213,7 @@ export default function Home() {
                 {t('home.productsDesc')}
               </p>
             </div>
-            <Link to="/cozumlerimiz" className="text-delka-blue font-bold flex items-center gap-2 hover:gap-4 transition-all shrink-0">
+            <Link to="/urunler" className="text-delka-blue font-bold flex items-center gap-2 hover:gap-4 transition-all shrink-0">
               {t('home.viewAll')} <ArrowRight size={20} />
             </Link>
           </div>
@@ -230,7 +223,7 @@ export default function Home() {
           {products.map((product) => (
             <Link 
               key={product.id} 
-              to={`/cozumlerimiz/${product.id}`}
+              to={`/urunler/${product.id}`}
               className="group bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgb(14,165,233,0.12)] hover:-translate-y-1 hover:border-blue-100 transition-all duration-300 relative overflow-hidden flex flex-col justify-between min-h-[160px]"
             >
               <div className="absolute -top-4 -right-4 p-8 opacity-5 group-hover:opacity-10 group-hover:scale-125 transition-all duration-500 text-delka-navy">
@@ -251,7 +244,7 @@ export default function Home() {
         </div>
         
         <div className="mt-8 text-center md:hidden">
-          <Link to="/cozumlerimiz" className="inline-flex items-center gap-2 text-delka-navy font-bold hover:text-delka-blue transition-colors group">
+          <Link to="/urunler" className="inline-flex items-center gap-2 text-delka-navy font-bold hover:text-delka-blue transition-colors group">
             Tümünü Gör <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

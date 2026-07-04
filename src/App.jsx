@@ -7,7 +7,7 @@ import SelectionGuide from './pages/SelectionGuide';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
-import Projects from './pages/Projects';
+import RequestForm from './pages/RequestForm';
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -24,10 +24,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/secim-rehberi" element={<SelectionGuide />} />
-            <Route path="/cozumlerimiz" element={<Products />} />
-            <Route path="/cozumlerimiz/:id" element={<ProductDetail />} />
-            <Route path="/projeler" element={<Projects />} />
+            <Route path="/urunler" element={<Products />} />
+            <Route path="/urunler/:id" element={<ProductDetail />} />
             <Route path="/iletisim" element={<Contact />} />
+            <Route path="/talep-formu" element={<RequestForm />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
