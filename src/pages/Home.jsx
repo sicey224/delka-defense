@@ -57,15 +57,7 @@ export default function Home() {
         </div>
 
         {/* Right 3D Canvas */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] relative order-1 md:order-2 custom-canvas-cursor">
-          <style>{`
-            .custom-canvas-cursor canvas {
-              cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v1a2 2 0 0 0-4 0V4a2 2 0 0 0-4 0v7"/><path d="M6 11V9a2 2 0 0 0-4 0v6c0 3.3 2.7 6 6 6h3c3.3 0 6-2.7 6-6v-4a2 2 0 0 0-4 0"/></svg>') 16 16, grab !important;
-            }
-            .custom-canvas-cursor canvas:active {
-              cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v1a2 2 0 0 0-4 0V4a2 2 0 0 0-4 0v7"/><path d="M6 11V9a2 2 0 0 0-4 0v6c0 3.3 2.7 6 6 6h3c3.3 0 6-2.7 6-6v-4a2 2 0 0 0-4 0"/></svg>') 16 16, grabbing !important;
-            }
-          `}</style>
+        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
           {/* Splash Effect Background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] z-0 pointer-events-none opacity-40">
             <div className="absolute top-10 left-10 w-72 h-72 bg-delka-blue rounded-full mix-blend-multiply filter blur-[50px] animate-pulse" />
