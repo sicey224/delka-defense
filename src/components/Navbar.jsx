@@ -52,7 +52,7 @@ export default function Navbar() {
             <Link to="/iletisim" className={`${location.pathname === '/iletisim' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
               {t('nav.contact')}
             </Link>
-            <Link to="/talep-formu" className="text-delka-blue bg-blue-50 px-4 py-1.5 rounded-full hover:bg-delka-blue hover:text-white transition-colors pb-1">
+            <Link to="/talep-formu" className={`${location.pathname === '/talep-formu' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
               {t('nav.requestForm')}
             </Link>
           </nav>
@@ -81,7 +81,7 @@ export default function Navbar() {
             <Link to="/urunler" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname.includes('/urunler') ? 'text-delka-blue' : ''}`}>{t('nav.solutions')}</Link>
             <Link to="/secim-rehberi" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname.includes('/secim-rehberi') ? 'text-delka-blue' : ''}`}>{t('nav.selectionGuide')}</Link>
             <Link to="/iletisim" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/iletisim' ? 'text-delka-blue' : ''}`}>{t('nav.contact')}</Link>
-            <Link to="/talep-formu" onClick={() => setMobileMenuOpen(false)} className="text-delka-blue">{t('nav.requestForm')}</Link>
+            <Link to="/talep-formu" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/talep-formu' ? 'text-delka-blue' : ''}`}>{t('nav.requestForm')}</Link>
         </nav>
         <div className="mt-auto pb-10 flex">
           <div className="text-sm font-bold text-slate-400 bg-slate-50 px-4 py-3 rounded-full border border-slate-200 inline-flex items-center cursor-pointer">
