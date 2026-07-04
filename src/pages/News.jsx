@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Beaker, ShieldCheck, FileText, Cpu, ArrowRight } from 'lucide-react';
+import { Beaker, ShieldCheck, FileText, Cpu, ArrowRight, Activity } from 'lucide-react';
 
 export default function News() {
   const { t } = useLanguage();
