@@ -63,10 +63,9 @@ export default function Navbar() {
             </Link>
           </nav>
           
-          <div className="hidden lg:flex items-center text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1.5 rounded-full shadow-inner border border-slate-100 cursor-pointer">
-            <button onClick={() => toggleLanguage('tr')} className={`hover:text-slate-800 transition-colors ${language === 'tr' ? 'text-delka-navy' : ''}`}>TR</button>
-            <span className="mx-1">/</span>
-            <button onClick={() => toggleLanguage('en')} className={`hover:text-slate-800 transition-colors ${language === 'en' ? 'text-delka-navy' : ''}`}>EN</button>
+          <div className="hidden lg:flex items-center text-xs font-bold bg-slate-100/80 p-1 rounded-full shadow-inner border border-slate-200/60">
+            <button onClick={() => toggleLanguage('tr')} className={`px-2.5 py-1 rounded-full transition-all duration-300 ${language === 'tr' ? 'bg-white text-delka-navy shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'}`}>TR</button>
+            <button onClick={() => toggleLanguage('en')} className={`px-2.5 py-1 rounded-full transition-all duration-300 ${language === 'en' ? 'bg-white text-delka-navy shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'}`}>EN</button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -92,10 +91,9 @@ export default function Navbar() {
             <Link to="/talep-formu" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/talep-formu' ? 'text-delka-blue' : ''}`}>{t('nav.requestForm')}</Link>
         </nav>
         <div className="mt-auto pb-10 flex">
-          <div className="text-sm font-bold text-slate-400 bg-slate-50 px-4 py-3 rounded-full border border-slate-200 inline-flex items-center cursor-pointer">
-            <button onClick={() => { toggleLanguage('tr'); setMobileMenuOpen(false); }} className={`hover:text-slate-800 transition-colors ${language === 'tr' ? 'text-delka-navy' : ''}`}>TR</button>
-            <span className="mx-2">/</span>
-            <button onClick={() => { toggleLanguage('en'); setMobileMenuOpen(false); }} className={`hover:text-slate-800 transition-colors ${language === 'en' ? 'text-delka-navy' : ''}`}>EN</button>
+          <div className="text-sm font-bold bg-slate-100/80 p-1.5 rounded-full border border-slate-200/60 inline-flex items-center shadow-inner">
+            <button onClick={() => { toggleLanguage('tr'); setMobileMenuOpen(false); }} className={`px-4 py-2 rounded-full transition-all duration-300 ${language === 'tr' ? 'bg-white text-delka-navy shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'}`}>TR</button>
+            <button onClick={() => { toggleLanguage('en'); setMobileMenuOpen(false); }} className={`px-4 py-2 rounded-full transition-all duration-300 ${language === 'en' ? 'bg-white text-delka-navy shadow-sm' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'}`}>EN</button>
           </div>
         </div>
       </div>

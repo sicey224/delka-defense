@@ -36,9 +36,6 @@ export default function News() {
               <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {t('news.n1Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
-                {t('news.readMore')} <ArrowRight size={18} />
-              </button>
             </div>
           </div>
 
@@ -53,9 +50,6 @@ export default function News() {
               <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {t('news.n2Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
-                {t('news.readMore')} <ArrowRight size={18} />
-              </button>
             </div>
           </div>
 
@@ -70,9 +64,6 @@ export default function News() {
               <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {t('news.n3Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
-                {t('news.readMore')} <ArrowRight size={18} />
-              </button>
             </div>
           </div>
 
@@ -87,9 +78,6 @@ export default function News() {
               <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                 {t('news.n4Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
-                {t('news.readMore')} <ArrowRight size={18} />
-              </button>
             </div>
           </div>
 
