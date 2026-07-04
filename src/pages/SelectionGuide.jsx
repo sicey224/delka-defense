@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FileText, ArrowLeft, Download, X, ChevronRight, CheckCircle2, Calendar, Hash, Info, Activity, Layers, Compass, ShieldCheck } from 'lucide-react';
+import { FileText, ArrowLeft, Download, X, ChevronRight, CheckCircle2, Calendar, Hash, Info, Activity, Layers, Compass, ShieldCheck, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -168,6 +168,41 @@ export default function SelectionGuide() {
                 <div>
                   <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">{t('sg.subject', 'Konu Kapsamı')}</div>
                   <div className="text-slate-800 font-extrabold text-lg leading-tight">{t('sg.subjectVal', 'Şok ve Titreşim İzolasyonu')}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-100 rounded-[2rem] p-8 md:p-12 mb-12 shadow-[0_10px_40px_rgb(0,0,0,0.03)]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-delka-blue">
+                      <Target size={20} />
+                    </div>
+                    {t('selectionGuide.criteriaTitle')}
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c1')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c2')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c3')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c4')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c5')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-delka-blue mt-2 shrink-0" /> {t('selectionGuide.c6')}</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-500">
+                      <FileText size={20} />
+                    </div>
+                    {t('selectionGuide.reportsTitle')}
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" /> {t('selectionGuide.r1')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" /> {t('selectionGuide.r2')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" /> {t('selectionGuide.r3')}</li>
+                    <li className="flex items-start gap-3 text-slate-600"><div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" /> {t('selectionGuide.r4')}</li>
+                  </ul>
                 </div>
               </div>
             </div>

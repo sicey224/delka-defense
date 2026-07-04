@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Float, ContactShadows } from '@react-three/drei';
-import { ArrowRight, Shield, Target, Zap, Users, ShieldCheck, Plane, Cpu, Box } from 'lucide-react';
+import { ArrowRight, Shield, Target, Zap, Users, ShieldCheck, Plane, Cpu, Box, Compass, Rocket, Wrench } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import DroneModel from '../components/DroneModel';
 import IsolatorModel from '../components/IsolatorModel';
@@ -31,7 +31,8 @@ export default function Home() {
         }}
       />
       {/* Hero Section */}
-      <main className="relative z-10 container mx-auto pt-32 min-h-[90vh] flex flex-col md:flex-row items-center">
+      <main className="relative pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden z-10 flex min-h-[75vh] items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 flex flex-col md:flex-row items-center">
         
         {/* Left Content */}
         <div className="w-full md:w-1/2 p-6 flex flex-col justify-center order-2 md:order-1 mt-10 md:mt-0">
@@ -74,11 +75,12 @@ export default function Home() {
             </Suspense>
           </Canvas>
         </div>
+        </div>
       </main>
 
       {/* About Section on Home */}
       <section id="hakkimizda" className="relative z-10 container mx-auto pt-32 pb-24 px-6">
-        <div id="hakkimizda" className="pt-24 pb-10">
+        <div className="pt-24 pb-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-delka-blue font-black uppercase tracking-widest text-sm mb-4 block">
               {t('home.aboutBadge')}
@@ -88,9 +90,6 @@ export default function Home() {
             </h2>
             <p className="text-lg text-slate-500 font-medium leading-relaxed">
               {t('home.aboutDesc')}
-            </p>
-            <p className="mt-4 text-slate-500 italic bg-yellow-50 p-4 rounded-xl border border-yellow-200">
-              [LÜTFEN DİKKAT: Eski sitenizdeki hakkımızda yazılarını bana ilettiğinizde bu alana yerleştireceğim.]
             </p>
           </div>
 
@@ -109,7 +108,7 @@ export default function Home() {
             {/* Vision */}
             <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-xl transition-all duration-300 group">
               <div className="w-16 h-16 bg-indigo-50 text-indigo-500 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <Zap size={32} />
+                <Compass size={32} />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">{t('home.visionTitle')}</h3>
               <p className="text-slate-500 leading-relaxed">
@@ -118,8 +117,73 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Why Choose Us */}
+      {/* Technical Approach Section */}
+      <section className="relative z-10 container mx-auto pb-24 px-6 mt-10 md:mt-0">
+        <div className="mb-24">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-delka-blue font-black uppercase tracking-widest text-sm mb-4 block">
+              {t('home.approachBadge')}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+              {t('home.approachTitle')}
+            </h2>
+            <p className="text-lg text-slate-500 font-medium leading-relaxed">
+              {t('home.approachDesc')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Feature 1 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
+                <Shield size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature1Title')}</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                {t('home.feature1Desc')}
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
+                <Cpu size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature2Title')}</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                {t('home.feature2Desc')}
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
+                <Rocket size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature3Title')}</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                {t('home.feature3Desc')}
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
+                <Wrench size={28} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature4Title')}</h3>
+              <p className="text-slate-500 leading-relaxed text-sm">
+                {t('home.feature4Desc')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="relative z-10 container mx-auto pb-24 px-6">
         <div className="bg-delka-navy rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl mb-10 group">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 blur-[100px] rounded-full pointer-events-none" />
           

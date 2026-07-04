@@ -1,78 +1,99 @@
 import React from 'react';
-import { ArrowRight, Newspaper } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { Beaker, ShieldCheck, FileText, Cpu, ArrowRight } from 'lucide-react';
 
 export default function News() {
   const { t } = useLanguage();
+
   return (
     <div className="pt-36 pb-24 relative z-10 min-h-screen bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-delka-blue font-black uppercase tracking-widest text-sm mb-4 block">
-            {t('nav.news')}
+            {t('news.badge', 'BİLGİ BANKASI')}
           </span>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
-            Haberler ve Gelişmeler
+          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+            {t('news.title', 'Testler, Ar-Ge ve Belgeler')}
           </h1>
           <p className="text-lg text-slate-500 font-medium leading-relaxed">
-            Şirketimizden en son haberler, projelerimizdeki gelişmeler ve sektörel duyurular.
+            {t('news.desc', 'Geliştirdiğimiz çözümlerin test süreçleri, ar-ge hedefleri ve kalite belgelerimiz hakkında güncel bilgiler.')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* News Item 1 */}
-          <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(14,165,233,0.12)] transition-all group">
-            <div className="h-48 bg-slate-200 w-full relative overflow-hidden flex items-center justify-center">
-              <Newspaper size={48} className="text-slate-400 group-hover:scale-110 transition-transform" />
+        {/* Knowledge Base Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Item 1 */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div className="h-48 bg-blue-50 relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+              <Beaker size={64} className="text-delka-blue opacity-80 group-hover:scale-110 transition-transform duration-500" />
             </div>
-            <div className="p-8">
-              <span className="text-sm font-bold text-delka-blue mb-2 block">10 Temmuz 2026</span>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Yeni Nesil İzolatör Sistemlerimizin Testleri Tamamlandı</h3>
-              <p className="text-slate-600 mb-6 line-clamp-3">
-                Denizcilik ve savunma sanayi için özel olarak geliştirdiğimiz yeni nesil şok izolatörlerimizin zorlu askeri standartlardaki testleri başarıyla sonuçlandı.
+            <div className="p-8 flex flex-col flex-grow">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n1Title')}</h2>
+              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                {t('news.n1Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 group-hover:text-delka-blue transition-colors">
-                Devamını Oku <ArrowRight size={16} />
+              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
+                {t('news.readMore')} <ArrowRight size={18} />
               </button>
             </div>
           </div>
 
-          {/* News Item 2 */}
-          <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(14,165,233,0.12)] transition-all group">
-            <div className="h-48 bg-slate-200 w-full relative overflow-hidden flex items-center justify-center">
-              <Newspaper size={48} className="text-slate-400 group-hover:scale-110 transition-transform" />
+          {/* Item 2 */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div className="h-48 bg-indigo-50 relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+              <Activity size={64} className="text-indigo-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
             </div>
-            <div className="p-8">
-              <span className="text-sm font-bold text-delka-blue mb-2 block">28 Haziran 2026</span>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Uluslararası Savunma Sanayii Fuarında Büyük İlgi</h3>
-              <p className="text-slate-600 mb-6 line-clamp-3">
-                Bu yıl katıldığımız uluslararası savunma sanayii fuarında, otonom sistemlerimiz ve yapay zeka destekli çözümlerimiz global sektör temsilcilerinden yoğun ilgi gördü.
+            <div className="p-8 flex flex-col flex-grow">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n2Title')}</h2>
+              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                {t('news.n2Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 group-hover:text-delka-blue transition-colors">
-                Devamını Oku <ArrowRight size={16} />
+              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
+                {t('news.readMore')} <ArrowRight size={18} />
               </button>
             </div>
           </div>
 
-          {/* News Item 3 */}
-          <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.04)] border border-slate-100 hover:shadow-[0_20px_50px_rgb(14,165,233,0.12)] transition-all group">
-            <div className="h-48 bg-slate-200 w-full relative overflow-hidden flex items-center justify-center">
-              <Newspaper size={48} className="text-slate-400 group-hover:scale-110 transition-transform" />
+          {/* Item 3 */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div className="h-48 bg-emerald-50 relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+              <Cpu size={64} className="text-emerald-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
             </div>
-            <div className="p-8">
-              <span className="text-sm font-bold text-delka-blue mb-2 block">15 Haziran 2026</span>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Ar-Ge Merkezimiz Yeni Yeteneklerle Büyüyor</h3>
-              <p className="text-slate-600 mb-6 line-clamp-3">
-                Sürekli inovasyon vizyonumuz doğrultusunda Ar-Ge merkezimize yeni uzman mühendisler katarak tasarım ve üretim kapasitemizi artırmaya devam ediyoruz.
+            <div className="p-8 flex flex-col flex-grow">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n3Title')}</h2>
+              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                {t('news.n3Desc')}
               </p>
-              <button className="text-delka-navy font-bold flex items-center gap-2 group-hover:text-delka-blue transition-colors">
-                Devamını Oku <ArrowRight size={16} />
+              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
+                {t('news.readMore')} <ArrowRight size={18} />
               </button>
             </div>
           </div>
+
+          {/* Item 4 */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
+            <div className="h-48 bg-slate-100 relative overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+              <ShieldCheck size={64} className="text-slate-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div className="p-8 flex flex-col flex-grow">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n4Title')}</h2>
+              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
+                {t('news.n4Desc')}
+              </p>
+              <button className="text-delka-navy font-bold flex items-center gap-2 hover:text-delka-blue transition-colors self-start mt-auto">
+                {t('news.readMore')} <ArrowRight size={18} />
+              </button>
+            </div>
+          </div>
+
         </div>
-
       </div>
     </div>
   );

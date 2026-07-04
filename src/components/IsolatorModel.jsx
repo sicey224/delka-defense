@@ -15,7 +15,7 @@ export default function IsolatorModel() {
   });
 
   return (
-    <group ref={groupRef} scale={0.14} position={[-0.2, -0.5, 0]}>
+    <group ref={groupRef} scale={0.18} position={[-0.2, -0.2, 0]}>
       <primitive object={object} />
     </group>
   );
