@@ -4,6 +4,14 @@ import { Send } from 'lucide-react';
 
 export default function RequestForm() {
   const { t } = useLanguage();
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
   return (
     <div className="pt-36 pb-24 relative z-10 min-h-screen bg-slate-50/50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
@@ -14,35 +22,42 @@ export default function RequestForm() {
           İhtiyacınıza uygun izolatör çözümü için formu doldurarak bize ulaşın. Mühendislerimiz en kısa sürede teknik detaylar ve teklif ile dönüş yapacaktır.
         </p>
         <div className="bg-white rounded-[2rem] p-8 shadow-xl">
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Ad Soyad</label>
-                <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Adınız Soyadınız" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Firma Adı</label>
-                <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Firmanızın Adı" />
-              </div>
+          {submitted ? (
+            <div className="bg-green-50 text-green-700 p-8 rounded-xl text-center">
+              <h3 className="text-2xl font-bold mb-2">Talebiniz Alındı!</h3>
+              <p>Mühendislerimiz en kısa sürede sizinle iletişime geçecektir.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">E-posta Adresi</label>
-                <input type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="ornek@firma.com" />
+          ) : (
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Ad Soyad</label>
+                  <input required type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Adınız Soyadınız" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Firma Adı</label>
+                  <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Firmanızın Adı" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">E-posta Adresi</label>
+                  <input required type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="ornek@firma.com" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Telefon Numarası</label>
+                  <input required type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="+90 ___ ___ __ __" />
+                </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Telefon Numarası</label>
-                <input type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="+90 ___ ___ __ __" />
+                <label className="block text-sm font-bold text-slate-700 mb-2">İhtiyaç Duyulan İzolatör Tipi ve Teknik Detaylar</label>
+                <textarea required rows={5} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Şok, titreşim değerleri, ağırlık ve kullanım alanı gibi teknik detayları belirtebilirsiniz..."></textarea>
               </div>
-            </div>
-            <div>
-              <label className="block text-sm font-bold text-slate-700 mb-2">İhtiyaç Duyulan İzolatör Tipi ve Teknik Detaylar</label>
-              <textarea rows={5} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder="Şok, titreşim değerleri, ağırlık ve kullanım alanı gibi teknik detayları belirtebilirsiniz..."></textarea>
-            </div>
-            <button type="submit" className="w-full bg-delka-navy text-white font-bold py-4 rounded-xl hover:bg-delka-blue transition-colors flex items-center justify-center gap-3 text-lg">
-              Talebi Gönder <Send size={20} />
-            </button>
-          </form>
+              <button type="submit" className="w-full bg-delka-navy text-white font-bold py-4 rounded-xl hover:bg-delka-blue transition-colors flex items-center justify-center gap-3 text-lg">
+                Talebi Gönder <Send size={20} />
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>

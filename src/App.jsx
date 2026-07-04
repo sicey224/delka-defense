@@ -8,6 +8,9 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import RequestForm from './pages/RequestForm';
+import About from './pages/About';
+import Services from './pages/Services';
+import News from './pages/News';
 import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
@@ -28,6 +31,9 @@ function App() {
             <Route path="/urunler/:id" element={<ProductDetail />} />
             <Route path="/iletisim" element={<Contact />} />
             <Route path="/talep-formu" element={<RequestForm />} />
+            <Route path="/hakkimizda" element={<About />} />
+            <Route path="/hizmetlerimiz" element={<Services />} />
+            <Route path="/haberler" element={<News />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

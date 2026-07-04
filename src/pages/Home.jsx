@@ -89,6 +89,9 @@ export default function Home() {
             <p className="text-lg text-slate-500 font-medium leading-relaxed">
               {t('home.aboutDesc')}
             </p>
+            <p className="mt-4 text-slate-500 italic bg-yellow-50 p-4 rounded-xl border border-yellow-200">
+              [LÜTFEN DİKKAT: Eski sitenizdeki hakkımızda yazılarını bana ilettiğinizde bu alana yerleştireceğim.]
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -157,59 +160,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="relative z-10 container mx-auto pb-24 px-6 mt-10 md:mt-0">
-        <div className="mb-24">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">{t('home.featuresTitle')}</h2>
-            <p className="text-slate-500 text-lg">
-              {t('home.featuresDesc')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 text-delka-navy">
-                <Plane size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature1Title')}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {t('home.feature1Desc')}
-              </p>
-            </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 text-delka-navy">
-                <Zap size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature2Title')}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {t('home.feature2Desc')}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 text-delka-navy">
-                <Shield size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature3Title')}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {t('home.feature3Desc')}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center mb-6 text-delka-navy">
-                <Cpu size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature4Title')}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {t('home.feature4Desc')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Solutions Section */}
       <section className="relative z-10 container mx-auto pb-24 px-6">

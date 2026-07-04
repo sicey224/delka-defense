@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
@@ -85,9 +86,9 @@ export default function Contact() {
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">{t('contact.cta_title')}</h2>
               <p className="text-blue-100/80 text-lg">{t('contact.cta_desc')}</p>
             </div>
-            <a href="mailto:info@delkasavunma.com" className="bg-white text-delka-navy px-10 py-5 rounded-full font-black uppercase tracking-wide flex items-center gap-3 hover:scale-105 transition-transform shrink-0 shadow-xl border border-white/20 hover:bg-slate-50">
+            <Link to="/talep-formu" className="bg-white text-delka-navy px-10 py-5 rounded-full font-black uppercase tracking-wide flex items-center gap-3 hover:scale-105 transition-transform shrink-0 shadow-xl border border-white/20 hover:bg-slate-50">
               {t('contact.cta_button')} <Send size={20} className="text-delka-blue" />
-            </a>
+            </Link>
           </div>
         </div>
 
