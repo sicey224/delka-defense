@@ -60,9 +60,9 @@ export default function Home() {
           
           <div className="w-full h-full flex items-center justify-center relative z-10 animate-[float_4s_ease-in-out_infinite]">
             <img 
-              src="/assets/catalog/ths-10224-urun.png" 
+              src="/assets/hero-isolator.png" 
               alt="Delka Isolator" 
-              className="w-3/4 max-w-[500px] object-contain drop-shadow-[0_20px_30px_rgba(10,48,85,0.4)]"
+              className="w-full max-w-[600px] object-contain drop-shadow-[0_30px_40px_rgba(10,48,85,0.3)] mix-blend-multiply rounded-[3rem]"
             />
           </div>
         </div>
