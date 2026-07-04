@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         {/* Right 3D Canvas */}
-        <div className="w-full md:w-1/2 h-[50vh] md:h-[80vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
+        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/60 rounded-full blur-[60px] z-0 pointer-events-none" />
           
           <Canvas camera={{ position: [0, 1.5, 7], fov: 45 }} className="z-10 relative">
@@ -79,8 +79,8 @@ export default function Home() {
       </main>
 
       {/* About Section on Home */}
-      <section id="hakkimizda" className="relative z-10 container mx-auto pt-32 pb-24 px-6">
-        <div className="pt-24 pb-10">
+      <section id="hakkimizda" className="relative z-10 container mx-auto pt-16 pb-24 px-6">
+        <div className="pt-8 pb-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-delka-blue font-black uppercase tracking-widest text-sm mb-4 block">
               {t('home.aboutBadge')}
