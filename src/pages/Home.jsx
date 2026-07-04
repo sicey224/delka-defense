@@ -57,8 +57,22 @@ export default function Home() {
         </div>
 
         {/* Right 3D Canvas */}
-        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/60 rounded-full blur-[60px] z-0 pointer-events-none" />
+        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] relative order-1 md:order-2 custom-canvas-cursor">
+          <style>{`
+            .custom-canvas-cursor canvas {
+              cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v1a2 2 0 0 0-4 0V4a2 2 0 0 0-4 0v7"/><path d="M6 11V9a2 2 0 0 0-4 0v6c0 3.3 2.7 6 6 6h3c3.3 0 6-2.7 6-6v-4a2 2 0 0 0-4 0"/></svg>') 16 16, grab !important;
+            }
+            .custom-canvas-cursor canvas:active {
+              cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v1a2 2 0 0 0-4 0V4a2 2 0 0 0-4 0v7"/><path d="M6 11V9a2 2 0 0 0-4 0v6c0 3.3 2.7 6 6 6h3c3.3 0 6-2.7 6-6v-4a2 2 0 0 0-4 0"/></svg>') 16 16, grabbing !important;
+            }
+          `}</style>
+          {/* Splash Effect Background */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] z-0 pointer-events-none opacity-40">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-delka-blue rounded-full mix-blend-multiply filter blur-[50px] animate-pulse" />
+            <div className="absolute top-1/4 right-10 w-64 h-64 bg-sky-300 rounded-full mix-blend-multiply filter blur-[40px] animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute bottom-10 left-1/3 w-80 h-80 bg-delka-navy rounded-full mix-blend-multiply filter blur-[60px] animate-pulse" style={{ animationDelay: '2s' }} />
+            <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-500 rounded-full mix-blend-multiply filter blur-[30px] animate-bounce" style={{ animationDelay: '3s' }} />
+          </div>
           
           <Canvas camera={{ position: [0, 1.5, 7], fov: 45 }} className="z-10 relative">
             <ambientLight intensity={1.5} />
