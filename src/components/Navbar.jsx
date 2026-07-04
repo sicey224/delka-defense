@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'pt-2 pb-2' : 'pt-6 pb-2'}`}>
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 transition-all duration-500 rounded-full border mx-4 xl:mx-auto ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-[0_10px_40px_rgb(0,0,0,0.08)] border-black/15' : 'bg-white/60 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-black/15 hover:bg-white/80 hover:border-black/20'}`}>
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 gap-4">
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 font-black text-2xl tracking-wide text-delka-navy z-50">
@@ -36,7 +36,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-4 xl:gap-6 text-sm font-bold text-slate-600 tracking-wider">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-[13px] font-bold text-slate-600 tracking-wide">
             <Link to="/" className={`${isHome && location.hash !== '#hakkimizda' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
               {t('nav.home')}
             </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
             </Link>
           </nav>
           
-          <div className="hidden md:flex items-center text-sm font-bold text-slate-400 bg-slate-50 px-4 py-2 rounded-full shadow-inner border border-slate-100 cursor-pointer">
+          <div className="hidden lg:flex items-center text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1.5 rounded-full shadow-inner border border-slate-100 cursor-pointer">
             <button onClick={() => toggleLanguage('tr')} className={`hover:text-slate-800 transition-colors ${language === 'tr' ? 'text-delka-navy' : ''}`}>TR</button>
             <span className="mx-1">/</span>
             <button onClick={() => toggleLanguage('en')} className={`hover:text-slate-800 transition-colors ${language === 'en' ? 'text-delka-navy' : ''}`}>EN</button>
@@ -71,7 +71,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden z-50 text-slate-800 p-2"
+            className="lg:hidden z-50 text-slate-800 p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -80,7 +80,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div className={`md:hidden fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`lg:hidden fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col gap-6 text-xl font-black text-slate-800 tracking-wide">
             <Link to="/" onClick={() => setMobileMenuOpen(false)} className={`${isHome && location.hash !== '#hakkimizda' ? 'text-delka-blue' : ''}`}>{t('nav.home')}</Link>
             <Link to="/#hakkimizda" onClick={() => setMobileMenuOpen(false)} className={`${location.hash === '#hakkimizda' ? 'text-delka-blue' : ''}`}>{t('nav.about')}</Link>
