@@ -4,6 +4,7 @@ import { OrbitControls, Float, ContactShadows } from '@react-three/drei';
 import { ArrowRight, Shield, Target, Zap, Users, ShieldCheck, Plane, Cpu, Box } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import DroneModel from '../components/DroneModel';
+import IsolatorModel from '../components/IsolatorModel';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -58,13 +59,20 @@ export default function Home() {
         <div className="w-full md:w-1/2 h-[50vh] md:h-[80vh] relative cursor-grab active:cursor-grabbing order-1 md:order-2">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/60 rounded-full blur-[60px] z-0 pointer-events-none" />
           
-          <div className="w-full h-full flex items-center justify-center relative z-10 animate-[float_4s_ease-in-out_infinite]">
-            <img 
-              src="/assets/hero-isolator.png" 
-              alt="Delka Isolator" 
-              className="w-full max-w-[600px] object-contain drop-shadow-[0_30px_40px_rgba(10,48,85,0.3)] mix-blend-multiply rounded-[3rem]"
-            />
-          </div>
+          <Canvas camera={{ position: [0, 1.5, 7], fov: 45 }} className="z-10 relative">
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[10, 20, 15]} intensity={3.5} castShadow color="#ffffff" />
+            <directionalLight position={[-10, -5, -10]} intensity={2} color="#f0f9ff" />
+            <pointLight position={[0, -2, 4]} intensity={1.5} color="#0ea5e9" />
+            
+            <Suspense fallback={null}>
+              <Float speed={2.5} rotationIntensity={1} floatIntensity={2} floatingRange={[-0.2, 0.2]}>
+                <IsolatorModel />
+              </Float>
+              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
+              <ContactShadows position={[0, -2, 0]} opacity={0.15} scale={10} blur={2} far={4} color="#0a3055" />
+            </Suspense>
+          </Canvas>
         </div>
       </main>
 
