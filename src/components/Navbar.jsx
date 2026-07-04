@@ -36,11 +36,11 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600 tracking-wider">
-            <Link to="/" className={`${isHome ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
+          <nav className="hidden md:flex items-center gap-4 xl:gap-6 text-sm font-bold text-slate-600 tracking-wider">
+            <Link to="/" className={`${isHome && location.hash !== '#hakkimizda' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
               {t('nav.home')}
             </Link>
-            <Link to="/hakkimizda" className={`${location.pathname === '/hakkimizda' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
+            <Link to="/#hakkimizda" className={`${location.hash === '#hakkimizda' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
               {t('nav.about')}
             </Link>
             <Link to="/hizmetlerimiz" className={`${location.pathname === '/hizmetlerimiz' ? 'text-delka-navy border-b-2 border-delka-blue' : 'hover:text-delka-blue transition-colors'} pb-1`}>
@@ -82,8 +82,8 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       <div className={`md:hidden fixed inset-0 bg-white z-40 flex flex-col pt-32 px-6 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col gap-6 text-xl font-black text-slate-800 tracking-wide">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)} className={`${isHome ? 'text-delka-blue' : ''}`}>{t('nav.home')}</Link>
-            <Link to="/hakkimizda" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/hakkimizda' ? 'text-delka-blue' : ''}`}>{t('nav.about')}</Link>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className={`${isHome && location.hash !== '#hakkimizda' ? 'text-delka-blue' : ''}`}>{t('nav.home')}</Link>
+            <Link to="/#hakkimizda" onClick={() => setMobileMenuOpen(false)} className={`${location.hash === '#hakkimizda' ? 'text-delka-blue' : ''}`}>{t('nav.about')}</Link>
             <Link to="/hizmetlerimiz" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/hizmetlerimiz' ? 'text-delka-blue' : ''}`}>{t('nav.services')}</Link>
             <Link to="/urunler" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname.includes('/urunler') ? 'text-delka-blue' : ''}`}>{t('nav.solutions')}</Link>
             <Link to="/haberler" onClick={() => setMobileMenuOpen(false)} className={`${location.pathname === '/haberler' ? 'text-delka-blue' : ''}`}>{t('nav.news')}</Link>
