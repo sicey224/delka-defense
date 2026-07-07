@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Float, ContactShadows } from '@react-three/drei';
-import { ArrowRight, Shield, Target, Zap, Users, ShieldCheck, Plane, Cpu, Box, Compass, Rocket, Wrench } from 'lucide-react';
+import { ArrowRight, Shield, Target, Cpu, Box, Compass, Rocket } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import DroneModel from '../components/DroneModel';
 import IsolatorModel from '../components/IsolatorModel';
@@ -140,7 +140,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Feature 1 */}
             <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
               <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
@@ -174,61 +174,11 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Feature 4 */}
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-              <div className="w-14 h-14 bg-slate-50 text-delka-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-slate-100 group-hover:border-blue-100">
-                <Wrench size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{t('home.feature4Title')}</h3>
-              <p className="text-slate-500 leading-relaxed text-sm">
-                {t('home.feature4Desc')}
-              </p>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="relative z-10 container mx-auto pb-24 px-6">
-        <div className="bg-delka-navy rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl mb-10 group">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 blur-[100px] rounded-full pointer-events-none" />
-          
-          <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">{t('home.whyTitle')}</h3>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 group-hover:bg-blue-500/30 transition-all">
-                  <ShieldCheck size={32} />
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">{t('home.why1')}</h4>
-                <p className="text-slate-400 text-sm">{t('home.why1Desc')}</p>
-              </div>
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 group-hover:bg-blue-500/30 transition-all">
-                  <Users size={32} />
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">{t('home.why2')}</h4>
-                <p className="text-slate-400 text-sm">{t('home.why2Desc')}</p>
-              </div>
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 group-hover:bg-blue-500/30 transition-all">
-                  <Zap size={32} />
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">{t('home.why3')}</h4>
-                <p className="text-slate-400 text-sm">{t('home.why3Desc')}</p>
-              </div>
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 group-hover:scale-110 group-hover:bg-blue-500/30 transition-all">
-                  <Target size={32} />
-                </div>
-                <h4 className="text-white font-bold text-lg mb-2">{t('home.why4')}</h4>
-                <p className="text-slate-400 text-sm">{t('home.why4Desc')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
 
 
