@@ -11,6 +11,7 @@ import RequestForm from './pages/RequestForm';
 import About from './pages/About';
 import Services from './pages/Services';
 import News from './pages/News';
+import NewsDetail from './pages/NewsDetail';
 import { LanguageProvider } from './context/LanguageContext';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="/talep-formu" element={<RequestForm />} />
             <Route path="/hizmetlerimiz" element={<Services />} />
             <Route path="/haberler" element={<News />} />
+            <Route path="/haberler/:id" element={<NewsDetail />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

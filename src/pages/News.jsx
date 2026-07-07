@@ -1,6 +1,28 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Beaker, ShieldCheck, FileText, Cpu, ArrowRight, Activity } from 'lucide-react';
+import { Beaker, ShieldCheck, Cpu, Activity, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const newsItems = [
+  { id: 1, icon: Beaker, color: 'blue' },
+  { id: 2, icon: Activity, color: 'indigo' },
+  { id: 3, icon: Cpu, color: 'emerald' },
+  { id: 4, icon: ShieldCheck, color: 'slate' },
+];
+
+const bgColorMap = {
+  blue: 'bg-blue-50',
+  indigo: 'bg-indigo-50',
+  emerald: 'bg-emerald-50',
+  slate: 'bg-slate-100',
+};
+
+const textColorMap = {
+  blue: 'text-delka-blue',
+  indigo: 'text-indigo-500',
+  emerald: 'text-emerald-500',
+  slate: 'text-slate-500',
+};
 
 export default function News() {
   const { t } = useLanguage();
@@ -24,63 +46,27 @@ export default function News() {
 
         {/* Knowledge Base Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Item 1 */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-            <div className="h-48 bg-blue-50 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-              <Beaker size={64} className="text-delka-blue opacity-80 group-hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n1Title')}</h2>
-              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                {t('news.n1Desc')}
-              </p>
-            </div>
-          </div>
-
-          {/* Item 2 */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-            <div className="h-48 bg-indigo-50 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-              <Activity size={64} className="text-indigo-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n2Title')}</h2>
-              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                {t('news.n2Desc')}
-              </p>
-            </div>
-          </div>
-
-          {/* Item 3 */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-            <div className="h-48 bg-emerald-50 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-              <Cpu size={64} className="text-emerald-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n3Title')}</h2>
-              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                {t('news.n3Desc')}
-              </p>
-            </div>
-          </div>
-
-          {/* Item 4 */}
-          <div className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group">
-            <div className="h-48 bg-slate-100 relative overflow-hidden flex items-center justify-center">
-              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-              <ShieldCheck size={64} className="text-slate-500 opacity-80 group-hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('news.n4Title')}</h2>
-              <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
-                {t('news.n4Desc')}
-              </p>
-            </div>
-          </div>
-
+          {newsItems.map(({ id, icon: Icon, color }) => (
+            <Link
+              key={id}
+              to={`/haberler/${id}`}
+              className="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group cursor-pointer"
+            >
+              <div className={`h-48 ${bgColorMap[color]} relative overflow-hidden flex items-center justify-center`}>
+                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+                <Icon size={64} className={`${textColorMap[color]} opacity-80 group-hover:scale-110 transition-transform duration-500`} />
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-delka-blue transition-colors">{t(`news.n${id}Title`)}</h2>
+                <p className="text-slate-600 leading-relaxed mb-6 flex-grow line-clamp-3">
+                  {t(`news.n${id}Desc`)}
+                </p>
+                <div className="inline-flex items-center gap-2 text-delka-blue font-bold text-sm uppercase tracking-wide group-hover:gap-3 transition-all">
+                  {t('news.readMore', 'Devamını Oku')} <ArrowRight size={16} />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

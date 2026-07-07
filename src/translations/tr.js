@@ -54,7 +54,9 @@ const tr = {
     why4Desc: "Müşteri ihtiyaçlarına özel, terzi usulü anahtar teslim çözümler.",
     productsTitle: "Vitrin Ürünlerimiz",
     productsDesc: "En çok tercih edilen, sahada kendini kanıtlamış üstün performanslı savunma sistemleri.",
-    viewAll: "Tümünü Gör"
+    viewAll: "Tümünü Gör",
+    videoBadge: "TANITIM",
+    videoTitle: "Delka Savunma Tanıtım"
   },
   products: {
     badge: "ÇÖZÜMLERİMİZ",
@@ -121,13 +123,19 @@ const tr = {
     desc: "Geliştirdiğimiz çözümlerin test süreçleri, ar-ge hedefleri ve kalite belgelerimiz hakkında güncel bilgiler.",
     n1Title: "Test-Analiz Çözümleri & Düşme Senaryoları",
     n1Desc: "Kendi tasarımımız olan test makinesi ile 3 eksende statik rijitlik testi yapılmaktadır. Bu veriler hem seçim yaparken hem de analizlerde kullanılmaktadır. Entegrasyon sonrası düşme testi gibi senaryolar analiz edilebilmektedir. Böylece optimum fayda ve zaman kazanılmaktadır. Yapısal tasarım konusunda da hizmet verilebilmektedir.",
+    n1Detail: "Delka Savunma olarak, izolatör seçim sürecinde ve performans doğrulamasında test verilerine büyük önem veriyoruz. Kendi tasarladığımız test makinesi sayesinde, 3 eksende (X, Y, Z) statik rijitlik testleri gerçekleştirmekteyiz.\n\nBu testlerden elde edilen veriler, izolatör seçim kriterlerinin belirlenmesinde ve sonlu eleman analizlerinde (FEA) doğrudan kullanılmaktadır. Entegrasyon sonrası düşme testi gibi kritik senaryolar da analiz edilerek, optimum performans sağlanmaktadır.\n\nYapısal tasarım hizmetlerimiz kapsamında, müşterilerimize izolatör montaj noktalarının tasarımından platform entegrasyonuna kadar kapsamlı destek sunmaktayız.",
     n2Title: "Statik Rijitlik Testleri (10224-40 & 6154-20)",
     n2Desc: "10224-40 Rijitlik Test Sonucu: Grafikte görüldüğü üzere, numunelerin rijitlik değerleri benzer seyir göstermektedir. 9 mm deplasmandaki rijitlik değeri referans alınmıştır. 6154-20 Rijitlik Test Sonucu: Rijitlik testi sonucu kuvvet-deplasman grafiği üzerinden değerlendirilir.",
+    n2Detail: "THS-10224-40 modeli için yapılan statik rijitlik testlerinde, numunelerin kuvvet-deplasman eğrileri karşılaştırılmıştır. Grafikte görüldüğü üzere, farklı numunelerin rijitlik değerleri benzer seyir göstermektedir ve bu durum üretim tutarlılığını kanıtlamaktadır.\n\n9 mm deplasmandaki rijitlik değeri referans noktası olarak alınmıştır. Bu değer, izolatörün operasyonel çalışma aralığında ne kadar kuvvet absorbe ettiğini göstermektedir.\n\nTHS-6154-20 modeli için ise rijitlik testi sonuçları kuvvet-deplasman grafiği üzerinden değerlendirilmiş; lineer ve nonlineer rijitlik bölgeleri net olarak ayrıştırılmıştır.",
     n3Title: "Ar-Ge: Gelecekte Neler Yapabiliriz?",
     n3Desc: "Titreşim, şok yüklerinin karma bir biçimde uygulandığı durumlarda ekipmandan veri almanın mümkün olmadığı durumlarda wire rope izolatörlerin lamalarını kompozit yapıp katmanları arasına ivme-ölçer sensörleri yerleştirerek veri toplamak mümkündür.",
+    n3Detail: "Ar-Ge vizyonumuz kapsamında, geleceğin izolatör teknolojileri üzerinde çalışmalar planlamaktayız.\n\nÖzellikle titreşim ve şok yüklerinin karma bir biçimde uygulandığı ve ekipmandan doğrudan veri almanın mümkün olmadığı durumlarda, yenilikçi bir yaklaşım geliştiriyoruz: Wire rope izolatörlerin lamalarını kompozit malzemeden üretip, katmanları arasına ivme-ölçer sensörleri yerleştirerek gerçek zamanlı veri toplamak.\n\nBu teknoloji sayesinde, izolatörlerin çalışma koşullarını anlık olarak izlemek ve performans optimizasyonu yapmak mümkün olacaktır. Ayrıca, toplanan verilerle makine öğrenmesi algoritmaları kullanılarak öngörücü bakım modelleri geliştirilmesi hedeflenmektedir.",
     n4Title: "Sahip Olduğumuz Belgeler",
     n4Desc: "Firmamızın sahip olduğu belgeler aşağıdadır. (Belgeler yakında eklenecektir).",
-    readMore: "Devamını Oku"
+    n4Detail: "Delka Savunma olarak, kalite yönetim sistemi ve sektörel standartlara uygunluk konusunda gerekli belgelendirme süreçlerini yürütmekteyiz.\n\nBelgelerimiz ve standart uyumluluğumuz hakkında güncel bilgiler bu sayfada paylaşılacaktır. Devam eden belgelendirme süreçlerimiz tamamlandıkça içerik güncellenecektir.",
+    readMore: "Devamını Oku",
+    backToList: "Haberlere Dön",
+    otherArticles: "Diğer Yazılar"
   },
   contact: {
     badge: "BİZE ULAŞIN",

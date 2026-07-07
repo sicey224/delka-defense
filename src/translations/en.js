@@ -54,7 +54,9 @@ const en = {
     why4Desc: "Tailor-made turnkey solutions special to customer needs.",
     productsTitle: "Featured Products",
     productsDesc: "The most preferred, field-proven high-performance defense systems.",
-    viewAll: "View All"
+    viewAll: "View All",
+    videoBadge: "INTRODUCTION",
+    videoTitle: "Delka Defense Introduction"
   },
   products: {
     badge: "OUR SOLUTIONS",
@@ -121,13 +123,19 @@ const en = {
     desc: "Up-to-date information on the testing processes, R&D goals, and quality certificates of our solutions.",
     n1Title: "Test-Analysis Solutions & Drop Scenarios",
     n1Desc: "Static rigidity testing in 3 axes is performed with our custom-designed testing machine. These data are used in both selection and analyses. Scenarios like post-integration drop testing can be analyzed for optimum efficiency and time-saving. Structural design services are also available.",
+    n1Detail: "At Delka Defense, we place great importance on test data in the isolator selection process and performance validation. With our custom-designed testing machine, we perform static rigidity tests in 3 axes (X, Y, Z).\n\nThe data obtained from these tests are directly used in determining isolator selection criteria and in finite element analyses (FEA). Critical scenarios such as post-integration drop testing are also analyzed to ensure optimum performance.\n\nAs part of our structural design services, we provide comprehensive support to our customers from isolator mounting point design to platform integration.",
     n2Title: "Static Rigidity Tests (10224-40 & 6154-20)",
     n2Desc: "10224-40 Rigidity Test Result: As seen in the graph, rigidity values of samples show a similar trend. Rigidity at 9 mm displacement is taken as reference. 6154-20 Rigidity Test Result: Rigidity test results are evaluated over the force-displacement graph.",
+    n2Detail: "For the THS-10224-40 model, force-displacement curves of specimens were compared in static rigidity tests. As seen in the graph, the rigidity values of different specimens show a similar trend, proving production consistency.\n\nThe rigidity value at 9 mm displacement was taken as the reference point. This value indicates how much force the isolator absorbs in its operational working range.\n\nFor the THS-6154-20 model, rigidity test results were evaluated through the force-displacement graph; linear and nonlinear rigidity regions were clearly distinguished.",
     n3Title: "R&D: What Can We Do in the Future?",
     n3Desc: "In cases where vibration and shock loads are applied mixedly and it is not possible to get data from the equipment, it is possible to make the lamellas of wire rope isolators composite and place accelerometer sensors between the layers to collect data.",
+    n3Detail: "Within the scope of our R&D vision, we are planning studies on future isolator technologies.\n\nEspecially in cases where vibration and shock loads are applied in a mixed manner and it is not possible to obtain data directly from the equipment, we are developing an innovative approach: Producing the lamellas of wire rope isolators from composite material and placing accelerometer sensors between the layers to collect real-time data.\n\nWith this technology, it will be possible to monitor the working conditions of isolators in real-time and perform performance optimization. Additionally, predictive maintenance models are aimed to be developed using machine learning algorithms with the collected data.",
     n4Title: "Our Certificates",
     n4Desc: "The documents our company possesses are listed below. (Documents will be added soon).",
-    readMore: "Read More"
+    n4Detail: "At Delka Defense, we are conducting the necessary certification processes for quality management system and sectoral standards compliance.\n\nCurrent information about our certificates and standards compliance will be shared on this page. Content will be updated as ongoing certification processes are completed.",
+    readMore: "Read More",
+    backToList: "Back to News",
+    otherArticles: "Other Articles"
   },
   contact: {
     badge: "CONTACT US",
