@@ -1,13 +1,14 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowLeft, Beaker, Activity, Cpu, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, Beaker, Activity, Cpu, ShieldCheck, Video } from 'lucide-react';
 
 const newsIcons = {
   1: Beaker,
   2: Activity,
   3: Cpu,
   4: ShieldCheck,
+  5: Video,
 };
 
 const newsColors = {
@@ -15,6 +16,7 @@ const newsColors = {
   2: 'indigo',
   3: 'emerald',
   4: 'slate',
+  5: 'amber',
 };
 
 export default function NewsDetail() {
@@ -33,7 +35,7 @@ export default function NewsDetail() {
   const Icon = newsIcons[numId];
   const color = newsColors[numId] || 'blue';
 
-  if (!title || numId < 1 || numId > 4) {
+  if (!title || numId < 1 || numId > 5) {
     return (
       <div className="pt-36 pb-24 min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-900 mb-4">{t('productDetail.error', 'İçerik bulunamadı.')}</h1>
@@ -49,6 +51,7 @@ export default function NewsDetail() {
     indigo: 'bg-indigo-50',
     emerald: 'bg-emerald-50',
     slate: 'bg-slate-100',
+    amber: 'bg-amber-50',
   };
 
   const textColorMap = {
@@ -56,6 +59,7 @@ export default function NewsDetail() {
     indigo: 'text-indigo-500',
     emerald: 'text-emerald-500',
     slate: 'text-slate-500',
+    amber: 'text-amber-500',
   };
 
   return (
@@ -92,6 +96,22 @@ export default function NewsDetail() {
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
+
+            {/* Video Player for Wirerope Test */}
+            {numId === 5 && (
+              <div className="mt-10">
+                <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.06)] border border-slate-100">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full aspect-video bg-black"
+                  >
+                    <source src="/delka-tanitim.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            )}
           </div>
         </article>
 
@@ -101,7 +121,7 @@ export default function NewsDetail() {
             {t('news.otherArticles', 'Diğer Yazılar')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].filter(n => n !== numId).slice(0, 2).map(n => {
+            {[1, 2, 3, 4, 5].filter(n => n !== numId).slice(0, 2).map(n => {
               const OtherIcon = newsIcons[n];
               const otherColor = newsColors[n];
               return (

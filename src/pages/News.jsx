@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Beaker, ShieldCheck, Cpu, Activity, ArrowRight } from 'lucide-react';
+import { Beaker, ShieldCheck, Cpu, Activity, ArrowRight, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const newsItems = [
@@ -8,6 +8,7 @@ const newsItems = [
   { id: 2, icon: Activity, color: 'indigo' },
   { id: 3, icon: Cpu, color: 'emerald' },
   { id: 4, icon: ShieldCheck, color: 'slate' },
+  { id: 5, icon: Video, color: 'amber' },
 ];
 
 const bgColorMap = {
@@ -15,6 +16,7 @@ const bgColorMap = {
   indigo: 'bg-indigo-50',
   emerald: 'bg-emerald-50',
   slate: 'bg-slate-100',
+  amber: 'bg-amber-50',
 };
 
 const textColorMap = {
@@ -22,6 +24,7 @@ const textColorMap = {
   indigo: 'text-indigo-500',
   emerald: 'text-emerald-500',
   slate: 'text-slate-500',
+  amber: 'text-amber-500',
 };
 
 export default function News() {

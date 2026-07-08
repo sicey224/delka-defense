@@ -133,6 +133,9 @@ const en = {
     n4Title: "Our Certificates",
     n4Desc: "The documents our company possesses are listed below. (Documents will be added soon).",
     n4Detail: "At Delka Defense, we are conducting the necessary certification processes for quality management system and sectoral standards compliance.\n\nCurrent information about our certificates and standards compliance will be shared on this page. Content will be updated as ongoing certification processes are completed.",
+    n5Title: "Wirerope Test",
+    n5Desc: "Description will be added.",
+    n5Detail: "",
     readMore: "Read More",
     backToList: "Back to News",
     otherArticles: "Other Articles"

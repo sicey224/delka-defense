@@ -125,31 +125,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Video Section */}
-      <section className="relative z-10 container mx-auto pb-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-delka-blue font-black uppercase tracking-widest text-sm mb-4 block">
-              {t('home.videoBadge', 'TANITIM')}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-              {t('home.videoTitle', 'Delka Savunma Tanıtım')}
-            </h2>
-          </div>
-          <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgb(0,0,0,0.08)] border border-slate-100">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full aspect-video bg-black"
-              poster=""
-            >
-              <source src="/delka-tanitim.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </section>
-
       {/* Technical Approach Section */}
       <section className="relative z-10 container mx-auto pb-24 px-6 mt-10 md:mt-0">
         <div className="mb-24">

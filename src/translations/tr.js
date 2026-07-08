@@ -133,6 +133,9 @@ const tr = {
     n4Title: "Sahip Olduğumuz Belgeler",
     n4Desc: "Firmamızın sahip olduğu belgeler aşağıdadır. (Belgeler yakında eklenecektir).",
     n4Detail: "Delka Savunma olarak, kalite yönetim sistemi ve sektörel standartlara uygunluk konusunda gerekli belgelendirme süreçlerini yürütmekteyiz.\n\nBelgelerimiz ve standart uyumluluğumuz hakkında güncel bilgiler bu sayfada paylaşılacaktır. Devam eden belgelendirme süreçlerimiz tamamlandıkça içerik güncellenecektir.",
+    n5Title: "Wirerope Testi",
+    n5Desc: "Açıklama eklenecektir.",
+    n5Detail: "",
     readMore: "Devamını Oku",
     backToList: "Haberlere Dön",
     otherArticles: "Diğer Yazılar"
