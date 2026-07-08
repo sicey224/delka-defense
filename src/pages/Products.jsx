@@ -2,17 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Box, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useData } from '../context/DataContext';
 
 export default function Products() {
   const { t } = useLanguage();
-  const products = [
-    { id: 'ths-3139', name: 'THS-3139' },
-    { id: 'ths-4139', name: 'THS-4139' },
-    { id: 'ths-6154', name: 'THS-6154' },
-    { id: 'ths-8154', name: 'THS-8154' },
-    { id: 'ths-10224', name: 'THS-10224' },
-    { id: 'ths-12224', name: 'THS-12224' },
-  ];
+  const { products } = useData();
+
 
   return (
     <div className="pt-36 pb-24 relative z-10 min-h-screen bg-slate-50/50 overflow-hidden">

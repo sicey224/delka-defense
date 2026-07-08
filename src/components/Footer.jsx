@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   return (
     <footer className="bg-delka-navy text-slate-300 relative overflow-hidden z-20 border-t border-slate-800">
       
@@ -17,7 +18,11 @@ export default function Footer() {
           
           {/* Brand & About */}
           <div className="col-span-1 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 font-black text-2xl tracking-wide text-white mb-6">
+            <Link 
+              to="/" 
+              onDoubleClick={(e) => { e.preventDefault(); navigate('/admin'); }}
+              className="flex items-center gap-3 font-black text-2xl tracking-wide text-white mb-6 select-none"
+            >
               <img src="/logo.png" alt="DELKA" className="w-10 h-10 object-contain brightness-0 invert" />
               <div>DELKA <span className="text-blue-400">SAVUNMA</span></div>
             </Link>

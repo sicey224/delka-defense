@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -7,6 +7,7 @@ export default function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const { language, toggleLanguage, t } = useLanguage();
+  const navigate = useNavigate();
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,7 +31,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20 gap-4">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 font-black text-2xl tracking-wide text-delka-navy z-50">
+          <Link 
+            to="/" 
+            onDoubleClick={(e) => { e.preventDefault(); navigate('/admin'); }}
+            className="flex items-center gap-3 font-black text-2xl tracking-wide text-delka-navy z-50 select-none"
+          >
             <img src="/logo.png" alt="DELKA" className="w-12 h-12 object-contain" />
             <div>DELKA <span className="text-delka-blue">SAVUNMA</span></div>
           </Link>

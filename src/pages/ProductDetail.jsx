@@ -1,22 +1,16 @@
 import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Box, Download, Image as ImageIcon, Zap } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, Box, Download, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useData } from '../context/DataContext';
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { t } = useLanguage();
+  const { products } = useData();
 
-  const productData = {
-    "ths-3139": { name: "THS-3139", imgUrl: "/assets/catalog/ths-3139-urun.png", tableUrl: "/assets/catalog/ths-3139-tablo.png" },
-    "ths-4139": { name: "THS-4139", imgUrl: "/assets/catalog/ths-4139-urun.png", tableUrl: "/assets/catalog/ths-4139-tablo.png" },
-    "ths-6154": { name: "THS-6154", imgUrl: "/assets/catalog/ths-6154-urun.png", tableUrl: "/assets/catalog/ths-6154-tablo.png" },
-    "ths-8154": { name: "THS-8154", imgUrl: "/assets/catalog/ths-8154-urun.png", tableUrl: "/assets/catalog/ths-8154-tablo.png" },
-    "ths-10224": { name: "THS-10224", imgUrl: "/assets/catalog/ths-10224-urun.png", tableUrl: "/assets/catalog/ths-10224-tablo.png" },
-    "ths-12224": { name: "THS-12224", imgUrl: "/assets/catalog/ths-12224-urun.png", tableUrl: "/assets/catalog/ths-12224-tablo.png" }
-  };
+  const product = products.find((p) => p.id === id);
 
-  const product = productData[id];
 
   if (!product) {
     return (

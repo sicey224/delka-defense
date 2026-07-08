@@ -2,13 +2,20 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Send, User, Box, Activity, CloudRain, Paperclip, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useData } from '../context/DataContext';
 
 export default function RequestForm() {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = React.useState(false);
+  const { addSubmission } = useData();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    data.type = "İzolatör Talep Formu";
+    addSubmission(data);
+
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => setSubmitted(false), 5000);
@@ -53,36 +60,36 @@ export default function RequestForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.companyName')}</label>
-                    <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.companyNamePl')} required />
+                    <input type="text" name="companyName" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.companyNamePl')} required />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.fullName')}</label>
-                    <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.fullNamePl')} required />
+                    <input type="text" name="fullName" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.fullNamePl')} required />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.email')}</label>
-                    <input type="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.emailPl')} required />
+                    <input type="email" name="email" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.emailPl')} required />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.phone')}</label>
                     <div className="flex gap-2">
-                      <select className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 w-1/3 focus:outline-none focus:ring-2 focus:ring-delka-blue">
+                      <select name="phonePrefix" className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-3 w-1/3 focus:outline-none focus:ring-2 focus:ring-delka-blue">
                         <option value="+90">Turkey +90</option>
                       </select>
-                      <input type="tel" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.phonePl')} required />
+                      <input type="tel" name="phone" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.phonePl')} required />
                     </div>
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.address')}</label>
-                    <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.addressPl')} />
+                    <input type="text" name="address" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.addressPl')} />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.projectName')}</label>
-                    <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.projectNamePl')} />
+                    <input type="text" name="projectName" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue" placeholder={t('requestForm.projectNamePl')} />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.applicationArea')}</label>
-                    <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue">
+                    <select name="applicationArea" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-delka-blue">
                       <option>{t('requestForm.areaNaval')}</option>
                       <option>{t('requestForm.areaLand')}</option>
                       <option>{t('requestForm.areaAir')}</option>
@@ -103,20 +110,20 @@ export default function RequestForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="md:col-span-2">
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.equipDesc')}</label>
-                    <input type="text" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder={t('requestForm.equipDescPl')} />
+                    <input type="text" name="equipDesc" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder={t('requestForm.equipDescPl')} />
                   </div>
                   
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.equipDims')}</label>
                     <div className="flex gap-2">
-                      <input type="number" placeholder="W" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
-                      <input type="number" placeholder="L" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
-                      <input type="number" placeholder="H" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
+                      <input type="number" name="dimW" placeholder="W" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
+                      <input type="number" name="dimL" placeholder="L" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
+                      <input type="number" name="dimH" placeholder="H" className="w-1/3 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-center" />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.equipMass')}</label>
-                    <input type="number" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder={t('requestForm.equipMassPl')} />
+                    <input type="number" name="equipMass" className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder={t('requestForm.equipMassPl')} />
                   </div>
                   
                   <div>
@@ -295,7 +302,7 @@ export default function RequestForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.notes')}</label>
-                    <textarea rows={6} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder={t('requestForm.notesPl')}></textarea>
+                    <textarea name="notes" rows={6} className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-500" placeholder={t('requestForm.notesPl')}></textarea>
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">{t('requestForm.attachments')}</label>

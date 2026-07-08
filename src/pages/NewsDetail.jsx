@@ -1,41 +1,42 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { ArrowLeft, Beaker, Activity, Cpu, ShieldCheck, Video } from 'lucide-react';
+import { useData } from '../context/DataContext';
+import { ArrowLeft, Beaker, Activity, Cpu, ShieldCheck, Video, Newspaper } from 'lucide-react';
 
-const newsIcons = {
-  1: Beaker,
-  2: Activity,
-  3: Cpu,
-  4: ShieldCheck,
-  5: Video,
+const iconMap = {
+  Beaker,
+  Activity,
+  Cpu,
+  ShieldCheck,
+  Video,
+  Newspaper
 };
 
-const newsColors = {
-  1: 'blue',
-  2: 'indigo',
-  3: 'emerald',
-  4: 'slate',
-  5: 'amber',
+const bgColorMap = {
+  blue: 'bg-blue-50',
+  indigo: 'bg-indigo-50',
+  emerald: 'bg-emerald-50',
+  slate: 'bg-slate-100',
+  amber: 'bg-amber-50',
+};
+
+const textColorMap = {
+  blue: 'text-delka-blue',
+  indigo: 'text-indigo-500',
+  emerald: 'text-emerald-500',
+  slate: 'text-slate-500',
+  amber: 'text-amber-500',
 };
 
 export default function NewsDetail() {
   const { id } = useParams();
-  const { t } = useLanguage();
-  const numId = parseInt(id);
+  const { t, language } = useLanguage();
+  const { news } = useData();
 
-  const titleKey = `news.n${numId}Title`;
-  const descKey = `news.n${numId}Desc`;
-  const detailKey = `news.n${numId}Detail`;
+  const item = news.find((n) => n.id.toString() === id.toString());
 
-  const title = t(titleKey);
-  const desc = t(descKey);
-  const detail = t(detailKey, '');
-
-  const Icon = newsIcons[numId];
-  const color = newsColors[numId] || 'blue';
-
-  if (!title || numId < 1 || numId > 5) {
+  if (!item) {
     return (
       <div className="pt-36 pb-24 min-h-screen flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-900 mb-4">{t('productDetail.error', 'İçerik bulunamadı.')}</h1>
@@ -46,21 +47,12 @@ export default function NewsDetail() {
     );
   }
 
-  const bgColorMap = {
-    blue: 'bg-blue-50',
-    indigo: 'bg-indigo-50',
-    emerald: 'bg-emerald-50',
-    slate: 'bg-slate-100',
-    amber: 'bg-amber-50',
-  };
+  const title = language === 'tr' ? item.titleTR : item.titleEN;
+  const desc = language === 'tr' ? item.descTR : item.descEN;
+  const detail = language === 'tr' ? item.detailTR : item.detailEN;
 
-  const textColorMap = {
-    blue: 'text-delka-blue',
-    indigo: 'text-indigo-500',
-    emerald: 'text-emerald-500',
-    slate: 'text-slate-500',
-    amber: 'text-amber-500',
-  };
+  const Icon = iconMap[item.iconName] || Newspaper;
+  const color = item.color || 'blue';
 
   return (
     <div className="pt-36 pb-24 relative z-10 min-h-screen bg-slate-50/50">
@@ -81,7 +73,15 @@ export default function NewsDetail() {
           {/* Header Banner */}
           <div className={`h-56 md:h-72 ${bgColorMap[color]} relative overflow-hidden flex items-center justify-center`}>
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-            {Icon && <Icon size={96} className={`${textColorMap[color]} opacity-60`} />}
+            {item.imageUrl ? (
+              <img 
+                src={item.imageUrl} 
+                alt={title} 
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              Icon && <Icon size={96} className={`${textColorMap[color]} opacity-60`} />
+            )}
           </div>
 
           {/* Content */}
@@ -91,14 +91,14 @@ export default function NewsDetail() {
             </h1>
 
             <div className="prose prose-lg max-w-none text-slate-600 leading-relaxed space-y-6">
-              <p>{desc}</p>
+              <p className="font-medium text-slate-800">{desc}</p>
               {detail && detail.split('\n\n').map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
 
-            {/* Video Player for Wirerope Test */}
-            {numId === 5 && (
+            {/* Video Player for Wirerope Test (id 5 is default Wirerope Test) */}
+            {item.id === 5 && (
               <div className="mt-10">
                 <div className="bg-slate-50 rounded-2xl overflow-hidden shadow-[0_10px_40px_rgb(0,0,0,0.06)] border border-slate-100">
                   <video
@@ -121,21 +121,30 @@ export default function NewsDetail() {
             {t('news.otherArticles', 'Diğer Yazılar')}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4, 5].filter(n => n !== numId).slice(0, 2).map(n => {
-              const OtherIcon = newsIcons[n];
-              const otherColor = newsColors[n];
+            {news.filter(n => n.id.toString() !== id.toString()).slice(0, 2).map(n => {
+              const OtherIcon = iconMap[n.iconName] || Newspaper;
+              const otherColor = n.color || 'blue';
+              const otherTitle = language === 'tr' ? n.titleTR : n.titleEN;
               return (
                 <Link
-                  key={n}
-                  to={`/haberler/${n}`}
+                  key={n.id}
+                  to={`/haberler/${n.id}`}
                   className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
                 >
                   <div className={`h-32 ${bgColorMap[otherColor]} relative overflow-hidden flex items-center justify-center`}>
-                    {OtherIcon && <OtherIcon size={40} className={`${textColorMap[otherColor]} opacity-60 group-hover:scale-110 transition-transform duration-500`} />}
+                    {n.imageUrl ? (
+                      <img 
+                        src={n.imageUrl} 
+                        alt={otherTitle} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      OtherIcon && <OtherIcon size={40} className={`${textColorMap[otherColor]} opacity-60 group-hover:scale-110 transition-transform duration-500`} />
+                    )}
                   </div>
                   <div className="p-6">
                     <h4 className="text-lg font-bold text-slate-900 group-hover:text-delka-blue transition-colors">
-                      {t(`news.n${n}Title`)}
+                      {otherTitle}
                     </h4>
                   </div>
                 </Link>
@@ -148,3 +157,4 @@ export default function NewsDetail() {
     </div>
   );
 }
+
