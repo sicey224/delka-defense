@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Send, User, Box, Activity, CloudRain, Paperclip, ChevronLeft } from 'lucide-react';
+import { Send, User, Box, Activity, CloudRain, Paperclip, ChevronLeft, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useData } from '../context/DataContext';
 
@@ -32,6 +32,14 @@ export default function RequestForm() {
             </h1>
             <p className="text-slate-500 mt-2 font-medium">{t('requestForm.website')}</p>
           </div>
+          <a
+            href="/Delka_Savunma_Izolator_Talep_Formu.docx"
+            download
+            className="hidden sm:flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-medium transition-colors"
+          >
+            <Download size={18} />
+            {t('requestForm.downloadWord')}
+          </a>
         </div>
 
         <div className="bg-white rounded-3xl shadow-[0_10px_40px_rgb(0,0,0,0.04)] overflow-hidden border border-slate-100">

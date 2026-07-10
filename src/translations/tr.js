@@ -239,7 +239,8 @@ const tr = {
     dragDrop: "Dosyalarınızı buraya sürükleyin veya seçin",
     fileTypes: "3D Model (STEP/IGES), Teknik Şartname, Test Profili",
     selectFile: "Dosya Seç",
-    submitForm: "Formu Gönder"
+    submitForm: "Formu Gönder",
+    downloadWord: "Word Olarak İndir"
   }
 };
 

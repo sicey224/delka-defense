@@ -76,7 +76,7 @@ export default function Home() {
               <Float speed={2.5} rotationIntensity={1} floatIntensity={2} floatingRange={[-0.2, 0.2]}>
                 <IsolatorModel />
               </Float>
-              <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={1} />
+              <OrbitControls enableZoom={true} />
               <ContactShadows position={[0, -2, 0]} opacity={0.15} scale={10} blur={2} far={4} color="#0a3055" />
             </Suspense>
           </Canvas>

@@ -239,7 +239,8 @@ const en = {
     dragDrop: "Drag and drop your files here or select them",
     fileTypes: "3D Model (STEP/IGES), Technical Specs, Test Profile",
     selectFile: "Select File",
-    submitForm: "Submit Form"
+    submitForm: "Submit Form",
+    downloadWord: "Download as Word"
   }
 };
 
